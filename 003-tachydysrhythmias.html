@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tachydysrhythmias — CorePendium One-Pager</title>
+<style>
+  :root { --ink:#1c2733; --blue:#2f6fb2; --orange:#d97b29; --green:#2e8b57; --red:#c0392b; --gold:#b8860b; --bg:#ffffff; --line:#dde5ee; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#eef1f5; padding:14px; }
+  .page { max-width:820px; margin:0 auto; background:var(--bg); padding:22px 26px; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,.12); overflow-wrap:anywhere; }
+  .nav { position:sticky; top:6px; z-index:6; display:flex; justify-content:space-between; gap:8px; max-width:820px; margin:0 auto 10px; background:rgba(238,241,245,.94); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); border:1px solid var(--line); border-radius:10px; padding:6px; }
+  .nav a { display:flex; align-items:center; gap:4px; padding:9px 14px; border-radius:8px; background:#fff; border:1px solid var(--line); color:var(--blue); font-size:14px; font-weight:600; text-decoration:none; min-height:40px; }
+  .nav a.home { color:var(--ink); }
+  .nav a.disabled { opacity:.35; pointer-events:none; }
+  .nav .grow { flex:1; }
+  header { border-bottom:3px solid var(--blue); padding-bottom:8px; margin-bottom:12px; }
+  .num { display:inline-block; background:var(--blue); color:#fff; font-weight:700; font-size:12px; padding:2px 9px; border-radius:12px; margin-right:8px; vertical-align:2px; }
+  h1 { font-size:21px; letter-spacing:-.2px; display:inline; }
+  .chain { color:#64748b; font-size:11.5px; margin-top:4px; text-transform:uppercase; letter-spacing:.4px; }
+  .summary { background:#f0f6fd; border-left:4px solid var(--blue); padding:9px 13px; font-size:13px; margin:12px 0; border-radius:0 6px 6px 0; }
+  .summary b { color:var(--blue); }
+  h2 { font-size:12.5px; text-transform:uppercase; letter-spacing:.6px; color:var(--blue); margin:16px 0 8px; }
+  .flow { margin:6px 0 4px; }
+  .legend { font-size:10.5px; color:#64748b; margin:8px 0 10px; }
+  .legend b { font-weight:600; } .legend .l-blue { color:var(--blue); } .legend .l-green { color:var(--green); } .legend .l-orange { color:var(--orange); }
+  .step { display:flex; gap:10px; align-items:flex-start; padding:8px 12px; border-radius:8px; border:1.5px solid var(--line); background:#fbfdff; font-size:13px; line-height:1.42; }
+  .step .n { flex:0 0 22px; height:22px; border-radius:50%; background:var(--blue); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+  .step.assess .n { background:var(--blue); } .step.act .n { background:var(--green); } .step.call .n { background:var(--orange); }
+  .step .t { flex:1; }
+  .arrow { text-align:center; color:var(--blue); font-size:14px; font-weight:700; line-height:1.1; padding:3px 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:0 22px; }
+  .facts li, .pearls li, .pits li { font-size:12.6px; line-height:1.45; margin:0 0 7px 16px; }
+  .facts h2 { color:var(--blue); } .pearls h2 { color:var(--gold); }
+  .pits { background:#fdf1f0; border-left:4px solid var(--red); padding:8px 13px; border-radius:0 6px 6px 0; margin-top:14px; }
+  .pits h2 { color:var(--red); margin:0 0 6px; }
+  .pearls { background:#fdf8ec; border-left:4px solid var(--gold); padding:8px 13px; border-radius:0 6px 6px 0; }
+  .pearls ul, .pits ul { padding-left:4px; list-style:none; }
+  .pearls li::before { content:"★ "; color:var(--gold); } .pits li::before { content:"✕ "; color:var(--red); }
+  .facts ul { padding-left:4px; list-style:none; } .facts li::before { content:"▸ "; color:var(--blue); }
+  table { width:100%; border-collapse:collapse; font-size:12.8px; }
+  td { border:1px solid var(--line); padding:6px 9px; vertical-align:top; }
+  td.med { font-weight:700; color:var(--green); white-space:nowrap; width:22%; }
+  td.dose { font-weight:600; width:32%; } td.note { color:#475569; }
+  footer { margin-top:16px; padding-top:8px; border-top:1px solid var(--line); font-size:10.5px; color:#94a3b8; display:flex; justify-content:space-between; }
+  @media (max-width:640px) {
+    body { padding:8px; }
+    .page { padding:14px 14px 20px; border-radius:8px; }
+    h1 { font-size:19px; line-height:1.25; }
+    .chain { font-size:11px; }
+    .summary { font-size:15px; line-height:1.45; padding:10px 12px; }
+    h2 { font-size:13px; margin:18px 0 8px; }
+    .legend { font-size:12px; line-height:1.7; }
+    .step { font-size:15px; line-height:1.48; padding:11px 10px; border-radius:9px; }
+    .step .n { flex:0 0 24px; height:24px; font-size:13px; }
+    .arrow { font-size:16px; padding:4px 0; }
+    .grid { grid-template-columns:1fr; gap:0; }
+    .facts li, .pearls li, .pits li { font-size:14.5px; line-height:1.5; margin:0 0 9px 4px; }
+    .pits, .pearls { padding:10px 12px; }
+    table { font-size:14.5px; }
+    tr { display:block; border:1px solid var(--line); border-radius:9px; padding:4px 10px; margin-bottom:8px; }
+    td { display:block; border:none; padding:4px 0; width:auto; }
+    td.med { white-space:normal; width:auto; color:var(--green); font-size:15px; }
+    td.dose { font-size:15px; }
+    td.note { color:#475569; font-size:13.5px; }
+    footer { font-size:11px; flex-wrap:wrap; gap:4px; }
+    .nav { top:4px; margin-bottom:8px; }
+    .nav a { flex:1; justify-content:center; padding:12px 6px; font-size:14px; min-height:44px; }
+    .nav a.home { flex:0 0 auto; padding:12px 10px; }
+  }
+  @media print { body { background:#fff; padding:0; } .nav { display:none; } .page { box-shadow:none; max-width:100%; padding:8mm 10mm; border-radius:0; } }
+
+</style></head><body>
+<nav class="nav"><a class="prev" href="002-bradydysrhythmias.html">&#8592; 002</a><a class="home" href="index.html">Index</a><a class="next" href="004-syncope.html">004 &#8594;</a></nav>
+<div class="page">
+  <header>
+    <span class="num">003</span><h1>Tachydysrhythmias</h1>
+    <div class="chain">Cardiology · Week 2 · 17 min</div>
+  </header>
+  <div class="summary"><b>Bottom line:</b> Five-step approach to tachyarrhythmias: prepare, assess stability, P waves, regularity, width.</div>
+  <section class="flow"><h2>&#9878; Management Pathway</h2>
+    <div class="legend"><b class="l-blue">&#9679; assess/decide</b> &nbsp; <b class="l-green">&#9679; act/treat</b> &nbsp; <b class="l-orange">&#9679; refer/transfer</b></div>
+    <div class="flow"><div class="step act"><span class="n">1</span><span class="t">Bring IV, O2, monitor, advanced airway equipment, defibrillator, crash cart to bedside for every tachyarrhythmia.</span></div><div class="arrow">&#8595;</div><div class="step assess"><span class="n">2</span><span class="t">Assess stability: altered mental status, pulmonary edema, hypotension, chest pain; unstable favors electricity.</span></div><div class="arrow">&#8595;</div><div class="step act"><span class="n">3</span><span class="t">Look for P waves before every QRS; normal axis upright in II, negative in aVR.</span></div><div class="arrow">&#8595;</div><div class="step assess"><span class="n">4</span><span class="t">If sinus tachycardia, treat underlying cause (PE, sepsis, etc.), not the rate.</span></div><div class="arrow">&#8595;</div><div class="step assess"><span class="n">5</span><span class="t">Assess QRS regularity using calipers or paper notch method; irregular means origin above AV node.</span></div><div class="arrow">&#8595;</div><div class="step assess"><span class="n">6</span><span class="t">Assess QRS width: narrow &lt;3 small boxes in adults; wide suggests VT.</span></div><div class="arrow">&#8595;</div><div class="step act"><span class="n">7</span><span class="t">Classify into four groups: narrow regular, narrow irregular, wide regular, wide irregular.</span></div><div class="arrow">&#8595;</div><div class="step act"><span class="n">8</span><span class="t">For irregular/narrow supraventricular rhythms, block AV node; for unstable/wide, prepare electricity.</span></div></div></section>
+  
+  <div class="grid">
+    <section class="facts"><h2>&#128221; Key Facts</h2><ul><li>Five-step approach: IV/O2/monitor/airway/defibrillator/crash cart, stable or not, P waves or not, regular or irregular, wide or narrow.</li><li>Unstable indicators include altered mental status, pulmonary edema, hypotension, and chest pain; chest pain needs nuance.</li><li>Sinus rhythm: P wave before every QRS, upright in II, negative in aVR; sinus tachycardia rate varies.</li><li>Irregular rhythm originates above AV node, so it is not VT and is treated by AV node blockade.</li><li>Narrow QRS is &lt;3 small boxes in adults and indicates supraventricular origin; wide suggests VT.</li><li>All tachyarrhythmias fall into four groups: narrow regular, narrow irregular, wide regular, wide irregular.</li></ul></section>
+    <section class="pearls"><h2>Attending Pearls</h2><ul><li>Stable patients have time to think, examine ECGs, and consult; unstable patients need rapid intervention.</li><li>More unstable favors electricity; more stable favors avoiding electricity.</li><li>Irregular equals above AV node, block AV node; irregular equals not VT.</li><li>Narrow equals above AV node, block AV node; narrow and irregular is very unlikely VT.</li></ul></section>
+  </div>
+  <section class="pits"><h2>Pitfalls</h2><ul><li>Failing to ask &#x27;is this sinus rhythm?&#x27; and not looking for P waves can fool you in fast, sick patients.</li><li>Treating sinus tachycardia as an arrhythmia instead of the underlying cause (PE, sepsis, etc.).</li><li>Assuming chest pain always means unstable; young SVT patients with chest pain may be stable.</li><li>Not preparing for deterioration because every antiarrhythmic drug is proarrhythmic and cardioversion can go badly.</li></ul></section>
+  <footer><span>CorePendium C3 · Cardiology · Week 2</span><span>one-pager #003</span></footer>
+</div></body></html>
